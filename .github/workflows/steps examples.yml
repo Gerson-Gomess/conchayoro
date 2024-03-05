@@ -1,0 +1,19 @@
+name: steps examples
+
+on:
+    push:
+        branches: [ "main" ]
+    
+jobs:
+    marketplace:
+        runs-on: ubuntu-latest
+        steps:
+            - name: executa comando
+              run: echo "Steps examples"
+            - name: marketplace action
+            - name: Check out repo
+                uses: actions/checkout@v2
+
+            - name: Read node from package.json
+              uses: josepdecid/get-nodejs-version@<VERSION>
+              id: get-node-version
