@@ -1,18 +1,18 @@
 name: steps examples
 
 on:
-  push:
+  push
             
 jobs:
     marketplace:
         runs-on: ubuntu-latest
         steps:
-          - name: Example marketplace
-	    uses: actions/setup-node@v2
-	    with:
-	      node-version: '14'
+          - name: Example of use of marketplace
+	        uses: actions/setup-node@v2
+	        with:
+	          node-version: '14'
           - name: shows node version configured.
-	    run: node -v
+	        run: node -v
        
     hello_world_job:
 	runs-on: ubuntu-latest
@@ -23,6 +23,6 @@ jobs:
 	  - id: step-caller
 	    uses: "./.github/actions/hello"
 	    with:
-		the-caller: 'Myself'
+		  the-caller: 'Myself'
 	  - run: echo random-number ${{ steps.step-caller.outputs.random-number }}
 	    shell: bash
