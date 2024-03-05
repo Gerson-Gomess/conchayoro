@@ -10,9 +10,7 @@ jobs:
         steps:
             - name: executa comando
               run: echo "Steps examples"
-            - name: marketplace action
-            - name: Check out repo
-              uses: actions/checkout@v2
-            - name: Read node from package.json
-              uses: josepdecid/get-nodejs-version@<VERSION>
-              id: get-node-version
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v4.0.2
+            - name: node verification
+              run: node -v
